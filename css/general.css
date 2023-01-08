@@ -1,0 +1,163 @@
+@charset "UTF-8";
+/* リセット ================= */
+body, div, h1, h2, ul, li, p {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* 全体 ================= */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #FFF;
+  font-size: 16px;
+  font-family: 'Pangolin', cursive;
+  line-height: 1.6;
+  letter-spacing: 0.1rem;
+}
+#container {
+  background: #FFF;
+  width:100%;
+  max-width:840px;
+  margin: 0 auto;
+}
+#wrapper	{
+  overflow: hidden;
+}
+/* ヘッダー ================= */
+#gallery {
+  width: 100%;
+  height: 360px;
+  background-image: url(../images/slide1.jpg);
+  background-color: #8bd;/* 画像にマスクをかける */
+  background-blend-mode:overlay;;/*ブレンドモード*/
+  position:relative;
+  overflow-x:hidden;
+}
+}
+h1 {
+  color:cadetblue;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+h1.logo {
+	text-align: left;
+}
+h1.logo img {
+	vertical-align: bottom;
+	padding:0 1rem;
+}
+/* コンテンツ ================= */
+section {
+  margin-bottom: 15px;
+}
+section h2 {
+  color: #FFF;
+  font-size: 1.2em;
+  margin: 0 0 15px;
+  padding: 5px 0 4px 1.1em;
+  background-color: #669;
+  border-left: 6px solid #C69;
+}
+section p {
+  color: #333;
+  font-size: 0.875em;
+  margin: 0 1em 20px 2em;
+}
+/* フッター ================= */
+footer {
+  background-color: #669;
+  color: #FFF;
+  clear: both;
+  border-top: solid 1px #AAA;
+  border-bottom: solid 1px #AAA;
+  padding: 10px 0 12px 0;
+  text-align: center;
+}
+footer p small {
+  font-size: 0.8em;
+}
+/*==================
+TOPへのリンク
+====================*/
+p.pagetop {
+    position: fixed;/* 右下に固定  */
+    bottom: 16px;
+    right: 16px;
+    opacity: 0.55 ;
+}
+p.pagetop a {
+    display: block;
+    text-decoration: none;
+} 
+p.pagetop:hover {
+    opacity: 0.85 ;
+}
+/* アニメーション ================= */
+/* gallerly 見出し */
+#gallery h2.page-title {
+    font-size: 3rem;
+    color:#fff;
+    animation-name: slidein;
+    animation-duration: 3s;
+    animation-iteration-count:initial;
+    animation-fill-mode: forwards;/*アニメーション後を維持*/  
+}
+/* 背景 アニメーション fadeinbg */
+@keyframes fadeinbg {
+    from {
+        opacity: 0;
+        transform: translatez(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translatez(0);
+    }
+}
+/* 見出し アニメーション fadein */
+@keyframes slidein {
+    from {
+        opacity: 0;
+        transform:translate(0%, 0%)
+    }
+    to {
+        opacity: 1;
+        transform:scale(1.5) translate(30%, 100px);
+    }
+}
+/*========================
+Mobile
+==========================*/
+@media screen and (max-width:767px) {
+  /* ヘッダー ================= */
+ #gallery {
+  height: 260px;
+ }
+ h1 {
+  font-size: 1.5em;
+  font-weight: normal;
+ }
+#gallery h2.page-title {
+  font-size: 2rem;
+}
+/* 見出し アニメーション fadein */
+ @keyframes slidein {
+    from {
+        opacity: 0;
+        transform:translate(0%, 0%)
+    }
+    to {
+        opacity: 1;
+        transform:translate(10%, 150px);
+    }
+ }
+}
